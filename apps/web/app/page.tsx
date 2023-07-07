@@ -1,10 +1,18 @@
-import { Button, Header } from "ui";
+import React from 'react'
+import {redirect} from 'next/navigation'
 
-export default function Page() {
+async function donate(formData: FormData) {
+  'use server'
+
+  return redirect(`/wlad`)
+}
+
+export default function Home() {
   return (
-    <>
-      <Header text="Web" />
-      <Button />
-    </>
-  );
+    <div className="text-center">
+      <form action={donate}>
+        <input type="submit" value="vai" />
+      </form>
+    </div>
+  )
 }
